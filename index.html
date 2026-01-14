@@ -4,123 +4,453 @@
     <meta charset="UTF-8">
     <title>Ahmad Zikrulloh | Network Engineer Student</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #0f172a;
-            color: #e5e7eb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
         }
 
-        header {
-            padding: 80px 20px;
+        /* Header Styling */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #020617, #0f172a);
+            position: relative;
         }
 
-        header h1 {
-            font-size: 2.8em;
-            margin: 0;
-            color: #38bdf8;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        header p {
-            margin-top: 10px;
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .tagline {
             font-size: 1.1em;
-            color: #cbd5f5;
+            font-style: italic;
+            margin-top: 20px;
+            opacity: 0.8;
         }
 
-        section {
-            max-width: 900px;
-            margin: 50px auto;
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #2c3e50;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #2c3e50;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: #2c3e50;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        h2 {
-            color: #38bdf8;
-            border-left: 5px solid #38bdf8;
-            padding-left: 10px;
-            margin-bottom: 20px;
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .section-title h2 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
-            background: #020617;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(56,189,248,0.15);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
         }
 
-        ul {
-            padding-left: 20px;
+        .card:hover {
+            transform: translateY(-10px);
         }
 
-        li {
-            margin-bottom: 8px;
-        }
-
-        footer {
-            text-align: center;
+        .card-content {
             padding: 30px;
-            font-size: 0.9em;
-            background: #020617;
-            color: #94a3b8;
         }
 
-        .highlight {
-            color: #38bdf8;
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Profile Section */
+        .profile {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .profile-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .profile-info h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .profile-info p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .experience {
+            background-color: #2c3e50;
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f1f2f6;
+            padding: 80px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-item i {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .contact-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #3498db;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: #bdc3c7;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Ahmad Zikrulloh</h1>
-    <p>Student of Network Engineering | XI TJKT</p>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ahmad Zikrulloh</h1>
+            <p>Student of Network Engineering | XI TJKT</p>
+            <p class="tagline">"Membangun jaringan untuk masa depan yang terhubung"</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-outline">Pelajari Lebih Lanjut</a>
+                <a href="#contact" class="btn">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Tentang Saya</h2>
-    <div class="card">
-        <p>Halo, saya <span class="highlight">Ahmad Zikrulloh</span>, siswa kelas XI jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT). Saya tertarik pada dunia jaringan komputer, infrastruktur IT, serta pengembangan web dasar.</p>
-    </div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="profile">
+        <div class="container">
+            <div class="profile-content">
+                <div class="profile-img">
+                    <!-- Placeholder untuk gambar profil -->
+                    <div style="background-color: #ddd; height: 400px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-user" style="font-size: 100px; color: #aaa;"></i>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h2>Tentang Saya</h2>
+                    <p>Halo, saya <strong>Ahmad Zikrulloh</strong>, siswa kelas XI jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT). Saya memiliki minat yang besar dalam dunia jaringan komputer, infrastruktur IT, serta pengembangan web dasar.</p>
+                    <p>Saya percaya bahwa teknologi jaringan adalah tulang punggung dari era digital saat ini, dan saya berkomitmen untuk mengembangkan keterampilan saya di bidang ini.</p>
+                    <div class="experience">
+                        2 TAHUN PENGALAMAN
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Data Akademik</h2>
-    <div class="card">
-        <ul>
-            <li><strong>Kelas:</strong> XI TJKT</li>
-            <li><strong>Jurusan:</strong> Teknik Jaringan Komputer dan Telekomunikasi</li>
-        </ul>
-    </div>
-</section>
+    <!-- Academic Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Data Akademik</h2>
+                <p>Informasi mengenai latar belakang pendidikan dan keahlian teknis</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-graduation-cap"></i> Pendidikan</h3>
+                        <p><strong>Kelas:</strong> XI TJKT</p>
+                        <p><strong>Jurusan:</strong> Teknik Jaringan Komputer dan Telekomunikasi</p>
+                        <p><strong>Sekolah:</strong> SMK Teknologi Informasi</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-cogs"></i> Keahlian Teknis</h3>
+                        <p>• Konfigurasi Jaringan</p>
+                        <p>• Instalasi Kabel LAN</p>
+                        <p>• Perakitan PC & Server</p>
+                        <p>• Dasar-Dasar Cybersecurity</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-tools"></i> Tools & Teknologi</h3>
+                        <p>• Cisco Packet Tracer</p>
+                        <p>• Wireshark</p>
+                        <p>• HTML & CSS</p>
+                        <p>• Windows/Linux Server</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Projek</h2>
-    <div class="card">
-        <ul>
-            <li>Perakitan PC</li>
-            <li>Instalasi Kabel Jaringan (LAN)</li>
-            <li>Pembuatan Website HTML Dasar</li>
-        </ul>
-    </div>
-</section>
+    <!-- Projects Section -->
+    <section style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Proyek & Sertifikasi</h2>
+                <p>Karya dan pencapaian yang telah saya selesaikan selama menempuh pendidikan</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-project-diagram"></i> Proyek</h3>
+                        <p>• Perakitan PC Gaming & Workstation</p>
+                        <p>• Instalasi Kabel Jaringan (LAN) untuk Lab Sekolah</p>
+                        <p>• Pembuatan Website HTML & CSS Dasar</p>
+                        <p>• Simulasi Jaringan dengan Cisco Packet Tracer</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-certificate"></i> Sertifikasi</h3>
+                        <p>• Cyber Security Fundamentals</p>
+                        <p>• Network Fundamental Certification</p>
+                        <p>• Pelatihan Jurusan TJKT</p>
+                        <p>• Basic Web Development</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3><i class="fas fa-trophy"></i> Prestasi</h3>
+                        <p>• Juara 2 Lomba Jaringan Tingkat Sekolah</p>
+                        <p>• Peserta Aktif Pelatihan Cisco Networking</p>
+                        <p>• Presentasi Projek Jaringan di Forum Siswa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Sertifikat</h2>
-    <div class="card">
-        <ul>
-            <li>Cyber Security</li>
-            <li>Network Fundamental</li>
-            <li>Pelatihan Jurusan TJKT</li>
-        </ul>
-    </div>
-</section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Saya</h2>
+                <p>Silakan hubungi saya untuk diskusi lebih lanjut tentang jaringan komputer atau kolaborasi proyek</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>ahmad.zikrulloh@example.edu</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-school"></i>
+                    <h4>Sekolah</h4>
+                    <p>SMK Teknologi Informasi</p>
+                    <p>Jurusan TJKT</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Lokasi</h4>
+                    <p>Indonesia</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="mailto:ahmad.zikrulloh@example.edu" class="btn" style="background-color: #3498db; border-color: #3498db;">Kirim Pesan</a>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    &copy; 2026 Ahmad Zikrulloh — Network Engineer Student
-</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Ahmad Zikrulloh</h3>
+            <p>Network Engineer Student | XI TJKT</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Ahmad Zikrulloh — Network Engineer Student. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
